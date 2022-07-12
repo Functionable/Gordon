@@ -1,5 +1,2 @@
-.DS_Store
-/.build
-/Packages
-/*.xcodeproj
-xcuserdata/
+__pycache__
+bot-token
