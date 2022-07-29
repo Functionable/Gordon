@@ -1,5 +1,7 @@
 import disnake
-from disnake.ext import commands
+import asyncio
+import gordon.core_bot
+import gordon.command_modules
 
 def retrieve_token():
     global bot_token
@@ -11,18 +13,6 @@ def retrieve_token():
     except OSError:
         return False
 
-bot_intents = disnake.Intents(messages=True,members=True,guilds=True)
-bot_instance = commands.Bot(
-    command_prefix='$',
-    sync_commands=True,
-    sync_commands_debug=True,
-    intents=bot_intents
-)
-
-@bot_instance.slash_command()
-async def helloworld(inter):
-    await inter.response.send_message(f"Hello, World!")
-
 def start_bot():
     if retrieve_token():
         print("Token file empty or not found, aborting start process.")
@@ -31,4 +21,4 @@ def start_bot():
 
     global bot_instance
 
-    bot_instance.run(bot_token)
+    gordon.core_bot.bot_instance.run(bot_token)
