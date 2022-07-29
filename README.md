@@ -10,9 +10,10 @@ For discord, written in Python.
 6. Enjoy!
 
 ## Prerequisites
-- A working installation of python 3
-- pip.
+- Python >= 3.8
+- pip
 - disnake
+- yt-dlp
 
 ## License used
 Mozilla Public License 2.0
